@@ -111,10 +111,7 @@ def main():
         print("At least one must be set: --search-term, --search-page-ids")
         sys.exit(1)
 
-    if not opts.search_term:
-        search_term = "."
-    else:
-        search_term = opts.search_term
+    search_term = "." if not opts.search_term else opts.search_term
     api = FbAdsLibraryTraversal(
         opts.access_token, opts.fields, search_term, opts.country
     )
