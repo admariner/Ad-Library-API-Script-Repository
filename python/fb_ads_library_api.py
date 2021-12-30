@@ -109,7 +109,7 @@ class FbAdsLibraryTraversal:
                     response_data["data"],
                 )
             )
-            if len(filtered) == 0:
+            if not filtered:
                 # if no data after the after_date, break
                 next_page_url = None
                 break
